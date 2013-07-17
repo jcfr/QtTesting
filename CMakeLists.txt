@@ -27,6 +27,7 @@ ENDIF()
 
 IF(NOT DEFINED QtTesting_INSTALL_CMAKE_DIR)
   SET(QtTesting_INSTALL_CMAKE_DIR lib/CMake)
+#  SET(QtTesting_INSTALL_CMAKE_DIR lib/cmake/qttesting)
 ENDIF()
 
 IF(NOT DEFINED QT_TESTING_EVENT_PLAYBACK_DELAY)
@@ -98,8 +99,10 @@ QT4_WRAP_CPP(MOC_BUILT_SOURCES
   pqBasicWidgetEventPlayer.h
   pqComboBoxEventTranslator.h
   pqCommentEventPlayer.h
+ # pqCheckpointEventPlayer.h
   pqDoubleSpinBoxEventTranslator.h
   pqEventComment.h
+  pqEventCheckpoint.h
   pqEventDispatcher.h
   pqEventObserver.h
   pqEventPlayer.h
@@ -154,8 +157,10 @@ SET(QtTesting_SOURCES
   pqBasicWidgetEventTranslator.cxx
   pqComboBoxEventTranslator.cxx
   pqCommentEventPlayer.cxx
+ # pqCheckpointEventPlayer.cxx
   pqDoubleSpinBoxEventTranslator.cxx
   pqEventComment.cxx
+  pqEventCheckpoint.cxx
   pqEventDispatcher.cxx
   pqEventObserver.cxx
   pqEventPlayer.cxx
@@ -197,8 +202,10 @@ SET(QtTesting_DEVEL_HEADERS
   pqBasicWidgetEventTranslator.h
   pqComboBoxEventTranslator.h
   pqCommentEventPlayer.h
+ # pqCheckpointEventPlayer.h
   pqDoubleSpinBoxEventTranslator.h
   pqEventComment.h
+  pqEventCheckpoint.h
   pqEventDispatcher.h
   pqEventObserver.h
   pqEventPlayer.h
@@ -276,6 +283,7 @@ set( QtTesting_EXPORT_FILE "${QtTesting_BINARY_DIR}/QtTestingConfig.cmake" )
 configure_file(
   "${QtTesting_SOURCE_DIR}/QtTestingConfig.cmake.in"
   "${QtTesting_EXPORT_FILE}"
+#  @ONLY
 )
 
 # Set up the install export
@@ -309,4 +317,7 @@ IF(QT_TESTING_INSTALL_DEVELOPMENT)
   install( FILES ${QtTesting_BINARY_DIR}/CMakeFiles/QtTestingConfig.cmake
     DESTINATION ${QtTesting_INSTALL_CMAKE_DIR}
   )
+#  install( EXPORT ${QT_TESTING_INSTALL_EXPORT_NAME}
+#    DESTINATION ${QtTesting_INSTALL_CMAKE_DIR}
+#  )
 ENDIF()
