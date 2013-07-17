@@ -29,7 +29,7 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =========================================================================*/
-
+#include "pqCheckpointEventPlayer.h"
 #include "pqCommentEventPlayer.h"
 #include "pqEventDispatcher.h"
 #include "pqEventPlayer.h"
@@ -53,11 +53,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QDebug>
 
 //////////////////////////////////////////////////////////////////////////////////
-// pqImplementation
+ //pqImplementation
 
-struct pqPlayBackEventsDialog::pqImplementation
-{
-public:
+ struct pqPlayBackEventsDialog::pqImplementation
+ {
+ public:
   pqImplementation(pqEventPlayer& player,
                    pqEventDispatcher& dispatcher,
                    pqTestUtility* testUtility);
@@ -80,7 +80,6 @@ public:
   QStringList   CurrentEvent;
   QRect         OldRect;
 };
-
 // ----------------------------------------------------------------------------
 pqPlayBackEventsDialog::pqImplementation::pqImplementation(pqEventPlayer& player,
                                                            pqEventDispatcher& dispatcher,
@@ -122,8 +121,23 @@ void pqPlayBackEventsDialog::pqImplementation::init(pqPlayBackEventsDialog* dial
   if (commentPlayer)
     {
     QObject::connect(commentPlayer, SIGNAL(comment(QString)),
-                     this->Ui.logBrowser, SLOT(append(QString)));
+                     this->Ui.logBrowser, SLOT(append(QCOMPARE(QString,QString("Hello")))));
     }
+
+pqWidgetEventPlayer* widgetPlayers =
+      this->Player.getWidgetEventPlayer(QString("pqCheckpointEventPlayer"));
+  pqCheckpointEventPlayer* checkpointPlayer =
+      qobject_cast<pqCheckpointEventPlayer*>(widgetPlayers);
+  if (checkpointPlayer)
+    {
+    QObject::connect(checkpointPlayer, SIGNAL(checkpoint(QString)),
+                     this->Ui.logBrowser, SLOT(append(QCOMPARE(QString,QString("Hello")))));// Comparaison avec un string , a titre d' exemple le string Hello
+    }
+
+
+
+
+
 
   dialog->setMaximumHeight(dialog->minimumSizeHint().height());
 
