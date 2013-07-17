@@ -99,7 +99,7 @@ QT4_WRAP_CPP(MOC_BUILT_SOURCES
   pqBasicWidgetEventPlayer.h
   pqComboBoxEventTranslator.h
   pqCommentEventPlayer.h
- # pqCheckpointEventPlayer.h
+  pqCheckpointEventPlayer.h
   pqDoubleSpinBoxEventTranslator.h
   pqEventComment.h
   pqEventCheckpoint.h
@@ -157,7 +157,7 @@ SET(QtTesting_SOURCES
   pqBasicWidgetEventTranslator.cxx
   pqComboBoxEventTranslator.cxx
   pqCommentEventPlayer.cxx
- # pqCheckpointEventPlayer.cxx
+  pqCheckpointEventPlayer.cxx
   pqDoubleSpinBoxEventTranslator.cxx
   pqEventComment.cxx
   pqEventCheckpoint.cxx
@@ -202,7 +202,7 @@ SET(QtTesting_DEVEL_HEADERS
   pqBasicWidgetEventTranslator.h
   pqComboBoxEventTranslator.h
   pqCommentEventPlayer.h
- # pqCheckpointEventPlayer.h
+  pqCheckpointEventPlayer.h
   pqDoubleSpinBoxEventTranslator.h
   pqEventComment.h
   pqEventCheckpoint.h
