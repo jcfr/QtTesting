@@ -37,8 +37,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QTextStream>
 #include <QTimer>
 #include <QPushButton>
+#include <QKeySequence>
+#include <QShortcut>
 
 // QtTesting includes
+#include "pqEventCheckpoint.h"
 #include "pqEventComment.h"
 #include "pqEventRecorder.h"
 #include "pqRecordEventsDialog.h"
@@ -113,6 +116,15 @@ pqRecordEventsDialog::pqRecordEventsDialog(pqEventRecorder* recorder,
                    SIGNAL(stopped()),
                    this,
                    SLOT(updateUi()));
+                                           
+   QKeySequence qkey("Ctrl+5");                                                            
+  QShortcut *shortcut= new QShortcut(qkey,this);                
+  QObject::connect(shortcut,
+                   SIGNAL(activated()),
+                   this, SLOT(addCheckpoint())); 
+                                   
+                  
+                   
 }
 
 // ----------------------------------------------------------------------------
@@ -154,7 +166,12 @@ void pqRecordEventsDialog::onEventRecorded(const QString& widget,
   int newValue = this->Implementation->Ui.nbEvents->value() + 1;
   this->Implementation->Ui.nbEvents->display(newValue);
 }
-
+// ----------------------------------------------------------------------------
+ /*void pqRecordEventsDialog::returnargumentedit()
+ {
+ t= this->Implementation->Ui.eventArgumentEdit->setText(argument);
+ return t;
+ }*/
 // ----------------------------------------------------------------------------
 void pqRecordEventsDialog::addComment()
 {
@@ -170,6 +187,20 @@ void pqRecordEventsDialog::addComment()
     }
   this->Implementation->Ui.commentTextEdit->clear();
 }
+
+// ----------------------------------------------------------------------------
+void pqRecordEventsDialog::addCheckpoint(const QString& widget,
+                                           const QString& command,
+                                           const QString& argument)
+    
+  
+    {
+    this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(argument);
+      
+    }
+  
+
+
 
 // ----------------------------------------------------------------------------
 void pqRecordEventsDialog::updateUi()

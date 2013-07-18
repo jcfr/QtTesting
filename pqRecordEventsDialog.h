@@ -45,27 +45,30 @@ class QTTESTING_EXPORT pqRecordEventsDialog :
 {
   Q_OBJECT
   
-public:
-  /**
-  Creates the dialog and begins translating user input with the supplied translator.
-  */
+ public:
+  
+  //Creates the dialog and begins translating user input with the supplied translator.
+  
   pqRecordEventsDialog(pqEventRecorder* recorder,
                        pqTestUtility* testUtility,
                        QWidget* Parent);
-
-private slots:
+ ~pqRecordEventsDialog();
+ 
+ private slots:
   virtual void done(int);
   void onEventRecorded(const QString&, const QString&, const QString&);
 
   void addComment();
-
-public slots:
-  void updateUi();
-
-private:
+  void addCheckpoint(const QString&, const QString&, const QString&);
+ 
+ public slots:
+   void updateUi();
+  
+ 
+ private:
   pqRecordEventsDialog(const pqRecordEventsDialog&);
   pqRecordEventsDialog& operator=(const pqRecordEventsDialog&);
-  ~pqRecordEventsDialog();
+   
 
   void ignoreObject(QObject* object);
 
