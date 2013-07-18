@@ -193,8 +193,9 @@ void pqRecordEventsDialog::addCheckpoint(const QString& widget,
                                            const QString& command,
                                            const QString& argument)
     
-  qDebug()<<"check action";
+  
     {
+    qDebug()<<"check action";
     this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(argument);
       
     }
