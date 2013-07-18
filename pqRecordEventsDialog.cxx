@@ -121,7 +121,7 @@ pqRecordEventsDialog::pqRecordEventsDialog(pqEventRecorder* recorder,
   QShortcut *shortcut= new QShortcut(qkey,this);                
   QObject::connect(shortcut,
                    SIGNAL(activated()),
-                   this, SLOT(addCheckpoint())); 
+                   this, SLOT(addCheckpoint(QString,QString,QString))); 
                                    
                   
                    
