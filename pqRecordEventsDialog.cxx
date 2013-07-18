@@ -120,7 +120,7 @@ pqRecordEventsDialog::pqRecordEventsDialog(pqEventRecorder* recorder,
    QKeySequence qkey("Ctrl+5");                                                            
   QShortcut *shortcut= new QShortcut(qkey,this);                
   QObject::connect(shortcut,
-                   SIGNAL(activated(QString,QString,QString)),
+                   SIGNAL(recordEvent(QString,QString,QString)),
                    this, SLOT(addCheckpoint(QString,QString,QString))); 
                                    
                   
