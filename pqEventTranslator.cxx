@@ -67,11 +67,11 @@ struct pqEventTranslator::pqImplementation
    
   ~pqImplementation()
   {
-  if(this->EventComment && this->EventCheckpoint)
+  if(this->EventCheckpoint)
     {
-    delete this->EventComment;
+    //delete this->EventComment;
     
-    //delete this->EventCheckpoint;
+    delete this->EventCheckpoint;
     }
     
    
