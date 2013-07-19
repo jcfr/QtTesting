@@ -306,7 +306,7 @@ void pqEventTranslator::onRecordEvent(QObject* Object,
 
   QString name;
   // When sender is pqEventObject, the Object name can be NULL.
-  qDebug()<<"check the connection action";
+  qDebug()<<"check the connection action new";
   if (!qobject_cast<pqEventCheckpoint*>(this->sender()) || Object)
     {
     name = pqObjectNaming::GetName(*Object);
