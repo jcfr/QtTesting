@@ -212,9 +212,9 @@ QList<pqWidgetEventTranslator*> pqEventTranslator::translators() const
 // ----------------------------------------------------------------------------
 void pqEventTranslator::addDefaultEventManagers(pqTestUtility* util)
 {
-  this->Implementation->EventComment = new pqEventComment(util);
-  QObject::connect(this->Implementation->EventComment,
-                   SIGNAL(recordComment(QObject*,QString,QString)),
+  this->Implementation->EventCheckpoint = new pqEventCheckpoint(util);
+  QObject::connect(this->Implementation->EventCheckpoint,
+                   SIGNAL(recordCheckpoint(QObject*,QString,QString)),
                    this,
                    SLOT(onRecordEvent(QObject*,QString,QString)));
 }
@@ -305,7 +305,7 @@ void pqEventTranslator::onRecordEvent(QObject* Object,
 
   QString name;
   // When sender is pqEventObject, the Object name can be NULL.
-  if (!qobject_cast<pqEventComment*>(this->sender()) || Object)
+  if (!qobject_cast<pqEventCheckpoint*>(this->sender()) || Object)
     {
     name = pqObjectNaming::GetName(*Object);
     if(name.isEmpty())
