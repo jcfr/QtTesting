@@ -204,7 +204,7 @@ void pqRecordEventsDialog::addCheckpoint(const QString& widget,
     qDebug()<<"check action";
     if (this->Implementation->Ui.checkpointBox->isChecked())
      {
-    this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint("hello");
+    this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(argument);
      }
     }
   
