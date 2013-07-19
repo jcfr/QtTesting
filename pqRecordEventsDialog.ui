@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>393</width>
+    <width>612</width>
     <height>256</height>
    </rect>
   </property>
@@ -26,7 +26,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideNone</enum>
@@ -287,6 +287,13 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkpointBox">
+       <property name="text">
+        <string>CheckBox</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="recordPauseButton">

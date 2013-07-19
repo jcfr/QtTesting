@@ -91,9 +91,9 @@ pqRecordEventsDialog::pqRecordEventsDialog(pqEventRecorder* recorder,
   this->setWindowTitle(tr("Recording User Input"));
   this->setObjectName("");
 
-  QObject::connect(this->Implementation->TestUtility->eventTranslator(),
+ /* QObject::connect(this->Implementation->TestUtility->eventTranslator(),
                    SIGNAL(recordEvent(QString,QString,QString)),
-                   this, SLOT(onEventRecorded(QString,QString,QString)));
+                   this, SLOT(onEventRecorded(QString,QString,QString))); */
 
   QObject::connect(this->Implementation->Ui.commentAddButton,
                    SIGNAL(clicked()),
@@ -116,12 +116,18 @@ pqRecordEventsDialog::pqRecordEventsDialog(pqEventRecorder* recorder,
                    SIGNAL(stopped()),
                    this,
                    SLOT(updateUi()));
+  
+  
+  QObject::connect(this->Implementation->TestUtility->eventTranslator(),
+                   SIGNAL(recordEvent(QString,QString,QString)),
+                   this, SLOT(addCheckpoint(QString,QString,QString)));
+                 
                                            
-   QKeySequence qkey("Ctrl+5");                                                            
+  /* QKeySequence qkey("Ctrl+5");                                                            
   QShortcut *shortcut= new QShortcut(qkey,this);                
   QObject::connect(shortcut,
                    SIGNAL(recordEvent(QString,QString,QString)),
-                   this, SLOT(addCheckpoint(QString,QString,QString))); 
+                   this, SLOT(addCheckpoint(QString,QString,QString))); */
                                    
                   
                    
@@ -195,9 +201,13 @@ void pqRecordEventsDialog::addCheckpoint(const QString& widget,
     
   
     {
+    
     qDebug()<<"check action";
+    if (this->Implementation->Ui.checkpointBox->isChecked())
+     {
+    
     this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(argument);
-      
+     }
     }
   
 
