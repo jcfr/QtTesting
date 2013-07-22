@@ -210,9 +210,9 @@ void pqRecordEventsDialog::addCheckpoint(const QString& widget,
             // if(a==1) 
             // {
                this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(argument);
-               this->Implementation->TestUtility->stopRecords(true);
+               this->Implementation->TestUtility->onRecordStopped();
              //}
-             
+            
      }
       // a=a+1;
     }
