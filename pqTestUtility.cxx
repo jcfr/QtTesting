@@ -39,6 +39,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QVariant>
 
 // QtTesting includes
+#include "pqEventCheckpoint.h"
 #include "pqEventComment.h"
 #include "pqEventObserver.h"
 #include "pqEventSource.h"
