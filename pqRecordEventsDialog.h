@@ -59,7 +59,7 @@ class QTTESTING_EXPORT pqRecordEventsDialog :
   void onEventRecorded(const QString&, const QString&, const QString&);
 
   void addComment();
-  void addCheckpoint(const QString&, const QString&, const QString&);
+  void addCheckpoint();
  
  public slots:
    void updateUi();

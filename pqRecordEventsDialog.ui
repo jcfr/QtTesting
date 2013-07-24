@@ -289,6 +289,13 @@
       </spacer>
      </item>
      <item>
+      <widget class="QPushButton" name="checkpointButton">
+       <property name="text">
+        <string>Add checkpoint</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QCheckBox" name="checkpointBox">
        <property name="text">
         <string>CheckBox</string>

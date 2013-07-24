@@ -192,6 +192,7 @@ pqWidgetEventTranslator* pqEventTranslator::getWidgetEventTranslator(
 // ----------------------------------------------------------------------------
 int pqEventTranslator::getWidgetEventTranslatorIndex(const QString& className)
 {
+qDebug()<<"check the translator";
   for (int i = 0 ; i < this->Implementation->Translators.count() ; ++i)
     {
     if (this->Implementation->Translators.at(i)->metaObject()->className() ==
