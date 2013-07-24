@@ -91,9 +91,9 @@ pqRecordEventsDialog::pqRecordEventsDialog(pqEventRecorder* recorder,
   this->setWindowTitle(tr("Recording User Input"));
   this->setObjectName("");
 
- /* QObject::connect(this->Implementation->TestUtility->eventTranslator(),
+  QObject::connect(this->Implementation->TestUtility->eventTranslator(),
                    SIGNAL(recordEvent(QString,QString,QString)),
-                   this, SLOT(onEventRecorded(QString,QString,QString))); */
+                   this, SLOT(onEventRecorded(QString,QString,QString))); 
 
   QObject::connect(this->Implementation->Ui.commentAddButton,
                    SIGNAL(clicked()),
