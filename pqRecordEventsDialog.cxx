@@ -39,7 +39,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QPushButton>
 #include <QKeySequence>
 #include <QShortcut>
-
+#include <QString>
 // QtTesting includes
 #include "pqEventCheckpoint.h"
 #include "pqEventComment.h"
@@ -68,7 +68,7 @@ public:
   }
 
   Ui::pqRecordEventsDialog Ui;
-
+QString t;
   pqEventRecorder*    Recorder;
   pqTestUtility*      TestUtility;
 };
@@ -170,7 +170,7 @@ void pqRecordEventsDialog::onEventRecorded(const QString& widget,
     {
     return;
     }
-
+  QString t = argument;
   this->Implementation->Ui.eventWidgetEdit->setText(widget);
   this->Implementation->Ui.eventCommandEdit->setText(command);
   this->Implementation->Ui.eventArgumentEdit->setText(argument);
@@ -212,7 +212,7 @@ void pqRecordEventsDialog::addCheckpoint()
     
             // if(a==1) 
             // {
-               this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint("Hello");
+               this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(t);
                //this->Implementation->TestUtility->onRecordStopped();
              //}
             

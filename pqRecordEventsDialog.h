@@ -71,7 +71,7 @@ class QTTESTING_EXPORT pqRecordEventsDialog :
    
 
   void ignoreObject(QObject* object);
-
+  QString t;
   struct pqImplementation;
   pqImplementation* const Implementation;
 };
