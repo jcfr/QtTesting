@@ -65,7 +65,7 @@ private slots:
   void onStarted(const QString&);
   void onStopped();
   void onModal(bool value);
-
+  void compar(const QString&);
 public slots:
   virtual void done(int);
   void updateUi();
