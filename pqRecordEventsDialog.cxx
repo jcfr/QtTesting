@@ -68,7 +68,7 @@ public:
   }
 
   Ui::pqRecordEventsDialog Ui;
-QString t;
+QString* t;
   pqEventRecorder*    Recorder;
   pqTestUtility*      TestUtility;
 };
@@ -170,7 +170,7 @@ void pqRecordEventsDialog::onEventRecorded(const QString& widget,
     {
     return;
     }
-  this->Implementation.t = argument;
+  //this->Implementation->t = argument;
   this->Implementation->Ui.eventWidgetEdit->setText(widget);
   this->Implementation->Ui.eventCommandEdit->setText(command);
   this->Implementation->Ui.eventArgumentEdit->setText(argument);
@@ -212,7 +212,7 @@ void pqRecordEventsDialog::addCheckpoint()
     
             // if(a==1) 
             // {
-               this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(this->Implementation.t);
+               this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(/*this->Implementation.t*/);
                //this->Implementation->TestUtility->onRecordStopped();
              //}
             
