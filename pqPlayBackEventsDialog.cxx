@@ -121,7 +121,7 @@ void pqPlayBackEventsDialog::pqImplementation::init(pqPlayBackEventsDialog* dial
   if (commentPlayer)
     {
     QObject::connect(commentPlayer, SIGNAL(comment(QString)),
-                     this->Ui.logBrowser, SLOT(append(QCOMPARE(QString,QString("Hello")))));
+                     this->Ui.logBrowser, SLOT(append(QString));
     }
 
 pqWidgetEventPlayer* widgetPlayers =
@@ -131,7 +131,7 @@ pqWidgetEventPlayer* widgetPlayers =
   if (checkpointPlayer)
     {
     QObject::connect(checkpointPlayer, SIGNAL(checkpoint(QString)),
-                     this->Ui.logBrowser, SLOT(append(QCOMPARE(QString,QString("Hello")))));// Comparaison avec un string , a titre d' exemple le string Hello
+                     this->Ui.logBrowser, SLOT(append(QString));// Comparaison avec un string , a titre d' exemple le string Hello
     }
 
 
