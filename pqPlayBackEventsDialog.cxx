@@ -121,7 +121,7 @@ void pqPlayBackEventsDialog::pqImplementation::init(pqPlayBackEventsDialog* dial
   if (commentPlayer)
     {
     QObject::connect(commentPlayer, SIGNAL(comment(QString)),
-                     this->Ui.logBrowser, SLOT(append(QString));
+                     this->Ui.logBrowser, SLOT(append(QString)));
     }
 
 pqWidgetEventPlayer* widgetPlayers =
