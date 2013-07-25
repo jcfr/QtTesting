@@ -128,11 +128,11 @@ pqWidgetEventPlayer* widgetPlayers =
       this->Player.getWidgetEventPlayer(QString("pqCheckpointEventPlayer"));
   pqCheckpointEventPlayer* checkpointPlayer =
       qobject_cast<pqCheckpointEventPlayer*>(widgetPlayers);
-  if (checkpointPlayer)
+  /*if (checkpointPlayer)
     {
     QObject::connect(checkpointPlayer, SIGNAL(checkpoint(QString)),
                      dialog, SLOT(compar(QString)));// Comparaison avec un string , a titre d' exemple le string Hello
-    }
+    }*/
 
 
 
@@ -180,10 +180,10 @@ pqWidgetEventPlayer* widgetPlayers =
 
 }
 // ----------------------------------------------------------------------------
- void compar(const QString& s) 
+ /*void compar(const QString& s) 
  {
  
- }
+ }*/
 // ----------------------------------------------------------------------------
 void pqPlayBackEventsDialog::pqImplementation::setProgressBarsValue(int value)
 {
