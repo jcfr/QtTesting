@@ -171,7 +171,10 @@ void pqRecordEventsDialog::onEventRecorded(const QString& widget,
     return;
     }
   //this->Implementation->t = argument;
+  if (this->Implementation->Ui.blockingCheckBox->isChecked())
+  {
   this->buffer= argument;
+  }
   this->Implementation->Ui.eventWidgetEdit->setText(widget);
   this->Implementation->Ui.eventCommandEdit->setText(command);
   this->Implementation->Ui.eventArgumentEdit->setText(argument);
@@ -213,7 +216,7 @@ void pqRecordEventsDialog::addCheckpoint()
     
             // if(a==1) 
             // {
-               this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint("hello word");
+               this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(this->buffer= argument);
                //this->Implementation->TestUtility->onRecordStopped();
              //}
             
