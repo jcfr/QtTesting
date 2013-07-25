@@ -41,6 +41,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "pqAbstractStringEventPlayer.h"
 #include "pqBasicWidgetEventPlayer.h"
 #include "pqCommentEventPlayer.h"
+#include "pqCheckpointEventPlayer.h"
 #include "pqObjectNaming.h"
 #include "pqTabBarEventPlayer.h"
 #include "pqTreeViewEventPlayer.h"
