@@ -68,7 +68,7 @@ public:
   }
 
   Ui::pqRecordEventsDialog Ui;
-QString* t;
+QString buffer;
   pqEventRecorder*    Recorder;
   pqTestUtility*      TestUtility;
 };
@@ -122,7 +122,7 @@ pqRecordEventsDialog::pqRecordEventsDialog(pqEventRecorder* recorder,
                    this,
                    SLOT(updateUi()));
   
-  
+   this->buffer= QString();
   /*QObject::connect(this->Implementation->TestUtility->eventTranslator(),
                    SIGNAL(recordEvent(QString,QString,QString)),
                    this, SLOT(addCheckpoint(QString,QString,QString)));*/
@@ -171,6 +171,7 @@ void pqRecordEventsDialog::onEventRecorded(const QString& widget,
     return;
     }
   //this->Implementation->t = argument;
+  this->buffer= argument;
   this->Implementation->Ui.eventWidgetEdit->setText(widget);
   this->Implementation->Ui.eventCommandEdit->setText(command);
   this->Implementation->Ui.eventArgumentEdit->setText(argument);
