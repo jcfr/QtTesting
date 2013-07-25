@@ -180,7 +180,7 @@ pqWidgetEventPlayer* widgetPlayers =
 
 }
 // ----------------------------------------------------------------------------
- void void pqPlayBackEventsDialog::compar(const QString& s) 
+ void pqPlayBackEventsDialog::compar(const QString& s) 
  {
  
  }
