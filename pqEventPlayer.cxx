@@ -65,7 +65,7 @@ pqEventPlayer::~pqEventPlayer()
 // ----------------------------------------------------------------------------
 void pqEventPlayer::addDefaultWidgetEventPlayers(pqTestUtility* util)
 {
-  addWidgetEventPlayer(new pqCheckpointEventPlayer(util))
+  addWidgetEventPlayer(new pqCheckpointEventPlayer(util));
   addWidgetEventPlayer(new pqCommentEventPlayer(util));
   addWidgetEventPlayer(new pqBasicWidgetEventPlayer());
   addWidgetEventPlayer(new pqAbstractActivateEventPlayer());
