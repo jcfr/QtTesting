@@ -60,7 +60,7 @@ class QTTESTING_EXPORT pqRecordEventsDialog :
 
   void addComment();
   void addCheckpoint();
- 
+  
  public slots:
    void updateUi();
   
@@ -69,9 +69,9 @@ class QTTESTING_EXPORT pqRecordEventsDialog :
   pqRecordEventsDialog(const pqRecordEventsDialog&);
   pqRecordEventsDialog& operator=(const pqRecordEventsDialog&);
    
-
+  
   void ignoreObject(QObject* object);
-  QString t;
+  QString buffer;
   struct pqImplementation;
   pqImplementation* const Implementation;
 };
