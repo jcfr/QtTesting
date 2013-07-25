@@ -212,7 +212,7 @@ void pqRecordEventsDialog::addCheckpoint()
     
             // if(a==1) 
             // {
-               this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(/*this->Implementation.t*/);
+               this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint("hello word");
                //this->Implementation->TestUtility->onRecordStopped();
              //}
             
