@@ -216,7 +216,7 @@ void pqRecordEventsDialog::addCheckpoint()
     
             // if(a==1) 
             // {
-               this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(this->buffer= argument);
+               this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(this->buffer);
                //this->Implementation->TestUtility->onRecordStopped();
              //}
             
