@@ -180,7 +180,7 @@ pqWidgetEventPlayer* widgetPlayers =
 
 }
 // ----------------------------------------------------------------------------
- void compar(QString& s) 
+ void compar(const QString& s) 
  {
  
  }
