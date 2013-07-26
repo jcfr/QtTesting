@@ -131,7 +131,7 @@ pqWidgetEventPlayer* widgetPlayers =
   if (checkpointPlayer)
     {
     QObject::connect(checkpointPlayer, SIGNAL(checkpoint(QString)),
-                     dialog, SLOT(compar(QString)));// Comparaison avec un string , a titre d' exemple le string Hello
+                     this->Ui.logBrowser, SLOT(append(QString)));
     }
 
 
