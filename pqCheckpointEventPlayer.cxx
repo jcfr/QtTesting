@@ -1,5 +1,5 @@
 
-
+#include <QDebug>
 #include "pqCheckpointEventPlayer.h"
 
 // ----------------------------------------------------------------------------
