@@ -32,15 +32,11 @@ bool pqCheckpointEventPlayer::playEvents(QObject* Object,
     emit this->checkpoint(Arguments);
     }
 
-  if (Command.startsWith("chekpoint"))
+  /*if (Command.startsWith("chekpoint"))
     {
     this->TestUtility->dispatcher()->run(false);
-    //prendre les arguments d'un evement faire un qcompare et afficher cela grace à un qdebbug
-    
-    }
-//if (!Arguments.isEmpty())
-    //{
-   //Qdebugg << Qcompare(Argument,Qstring("");
-    //}
+  
+    }*/
+
   return true;
 }
