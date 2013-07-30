@@ -5,7 +5,7 @@
 // ----------------------------------------------------------------------------
 pqCheckpointEventPlayer::pqCheckpointEventPlayer(pqTestUtility* testUtility,
                                            QObject* parent)
-  :pqCommentEventPlayer(testUtility,parent)
+  :pqWidgetEventPlayer(parent)
 {
   this->TestUtility = testUtility;
 }

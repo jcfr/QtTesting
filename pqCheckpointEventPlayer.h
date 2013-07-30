@@ -4,13 +4,13 @@
 // QtTesting includes
 #include "pqTestUtility.h"
 #include "pqWidgetEventPlayer.h"
-#include "pqCommentEventPlayer.h"
+
 
 /// This class is a checkpoint class.
 /// Do no action on Object.
-/// Emit comment wrote in the xml, which can be cacth to do checkpoint.
+/// Emit checkpoint wrote in the xml, which can be cacth to do checkpoint.
 
-class pqCheckpointEventPlayer: public pqCommentEventPlayer 
+class pqCheckpointEventPlayer: public pqWidgetEventPlayer 
 {
   Q_OBJECT
 
