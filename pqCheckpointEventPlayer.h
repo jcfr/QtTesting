@@ -18,7 +18,7 @@ public:
   pqCheckpointEventPlayer(pqTestUtility* testUtility, QObject* p =0);
   ~pqCheckpointEventPlayer();
 
-  bool playEvents(QObject* Object, const QString &Command, const QString &Arguments, bool &Error);
+  bool playEvent(QObject* Object, const QString &Command, const QString &Arguments, bool &Error);
 
 signals:
   void checkpoint(const QString&);

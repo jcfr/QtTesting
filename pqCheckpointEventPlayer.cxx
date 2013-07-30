@@ -17,7 +17,7 @@ pqCheckpointEventPlayer::~pqCheckpointEventPlayer()
 }
 
 // ----------------------------------------------------------------------------
-bool pqCheckpointEventPlayer::playEvents(QObject* Object,
+bool pqCheckpointEventPlayer::playEvent(QObject* Object,
                                      const QString &Command,
                                      const QString &Arguments,
                                      bool &Error)
