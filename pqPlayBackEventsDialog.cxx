@@ -49,7 +49,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QStringListModel>
 #include <QTextStream>
 #include <QTimer>
-
+ #include <QTest>
 #include <QDebug>
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -132,6 +132,9 @@ pqWidgetEventPlayer* widgetPlayers =
     {
     QObject::connect(checkpointPlayer, SIGNAL(checkpoint(QString)),
                      this->Ui.logBrowser, SLOT(append(QString)));
+      QObject::connect(checkpointPlayer, SIGNAL(checkpoint(QString)),
+                     this, SLOT(compar(QString)));                
+                     
     }
 
 
@@ -183,6 +186,8 @@ pqWidgetEventPlayer* widgetPlayers =
  void pqPlayBackEventsDialog::compar(const QString& s) 
  {
   qDebug()<<"action compare";
+   Qstring t = QCOMPARE(s, QString("hello world"));
+   qDebug()<< t;
  }
 // ----------------------------------------------------------------------------
 void pqPlayBackEventsDialog::pqImplementation::setProgressBarsValue(int value)
