@@ -183,11 +183,14 @@ pqWidgetEventPlayer* widgetPlayers =
 
 }
 // ----------------------------------------------------------------------------
- void pqPlayBackEventsDialog::compar(const QString& s) 
+ void pqPlayBackEventsDialog::compar(const QString& str1) 
  {
   qDebug()<<"action compare";
  // QCOMPARE(s, QString("hello world"));
    //qDebug()<< t;
+   	
+ QString t = str1.compare(QString("hello world"));
+ qDebug()<< t;
  }
 // ----------------------------------------------------------------------------
 void pqPlayBackEventsDialog::pqImplementation::setProgressBarsValue(int value)
