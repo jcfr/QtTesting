@@ -133,7 +133,7 @@ pqWidgetEventPlayer* widgetPlayers =
     QObject::connect(checkpointPlayer, SIGNAL(checkpoint(QString)),
                      this->Ui.logBrowser, SLOT(append(QString)));
       QObject::connect(checkpointPlayer, SIGNAL(checkpoint(QString)),
-                     this, SLOT(compar(QString)));                
+                     dialog, SLOT(compar(QString)));                
                      
     }
 
@@ -186,8 +186,8 @@ pqWidgetEventPlayer* widgetPlayers =
  void pqPlayBackEventsDialog::compar(const QString& s) 
  {
   qDebug()<<"action compare";
-   Qstring t = QCOMPARE(s, QString("hello world"));
-   qDebug()<< t;
+  QCOMPARE(s, QString("hello world"));
+   //qDebug()<< t;
  }
 // ----------------------------------------------------------------------------
 void pqPlayBackEventsDialog::pqImplementation::setProgressBarsValue(int value)
