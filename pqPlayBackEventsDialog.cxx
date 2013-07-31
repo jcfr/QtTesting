@@ -38,6 +38,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //#include "pqTest.h"
 #include "ui_pqPlayBackEventsDialog.h"
 
+#include <QString>
 #include <QCheckBox>
 #include <QFile>
 #include <QFileDialog>
@@ -189,7 +190,7 @@ pqWidgetEventPlayer* widgetPlayers =
  // QCOMPARE(s, QString("hello world"));
    //qDebug()<< t;
    	
- QString t = str1.compare(QString("hello world"));
+ QString t = QString::number(str1.compare(QString("hello world")));
  qDebug()<< t;
  }
 // ----------------------------------------------------------------------------
