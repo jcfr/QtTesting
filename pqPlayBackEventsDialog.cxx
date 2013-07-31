@@ -35,7 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "pqEventPlayer.h"
 #include "pqPlayBackEventsDialog.h"
 #include "pqTestUtility.h"
-
+#include "pqTest.h"
 #include "ui_pqPlayBackEventsDialog.h"
 
 #include <QCheckBox>
@@ -49,7 +49,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QStringListModel>
 #include <QTextStream>
 #include <QTimer>
-#include <QtTest/QtTest>
+//#include <QtTest/QtTest>
 #include <QDebug>
 
 //////////////////////////////////////////////////////////////////////////////////
