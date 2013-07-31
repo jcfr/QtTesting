@@ -35,7 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "pqEventPlayer.h"
 #include "pqPlayBackEventsDialog.h"
 #include "pqTestUtility.h"
-#include "pqTest.h"
+//#include "pqTest.h"
 #include "ui_pqPlayBackEventsDialog.h"
 
 #include <QCheckBox>
@@ -186,7 +186,7 @@ pqWidgetEventPlayer* widgetPlayers =
  void pqPlayBackEventsDialog::compar(const QString& s) 
  {
   qDebug()<<"action compare";
-  QCOMPARE(s, QString("hello world"));
+ // QCOMPARE(s, QString("hello world"));
    //qDebug()<< t;
  }
 // ----------------------------------------------------------------------------
