@@ -49,7 +49,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QStringListModel>
 #include <QTextStream>
 #include <QTimer>
- #include <QTest>
+#include <QtTest/QtTest>
 #include <QDebug>
 
 //////////////////////////////////////////////////////////////////////////////////
