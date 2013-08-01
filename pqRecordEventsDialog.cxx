@@ -173,7 +173,11 @@ void pqRecordEventsDialog::onEventRecorded(const QString& widget,
   //this->Implementation->t = argument;
   if (this->Implementation->Ui.blockingCheckBox->isChecked())
   {
-  this->buffer= argument;
+  QString t =argument;
+  QString s =widget;
+  s.append("!");
+  s.append(t);
+  this->buffer= s;
   }
   this->Implementation->Ui.eventWidgetEdit->setText(widget);
   this->Implementation->Ui.eventCommandEdit->setText(command);
