@@ -191,7 +191,7 @@ pqWidgetEventPlayer* widgetPlayers =
    //qDebug()<< t;
    QString tt=str1.right(2);
       int ss=tt.QString::indexOf("!");   
-   QString ttt =tt.leftRef(ss-1);
+   QString ttt =tt.left(ss-1);
    QString tts =tt.right(ss+1);        	
    qDebug()<< ttt;
    qDebug()<< tts;	
