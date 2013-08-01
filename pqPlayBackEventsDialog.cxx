@@ -189,9 +189,14 @@ pqWidgetEventPlayer* widgetPlayers =
   qDebug()<<"action compare";
  // QCOMPARE(s, QString("hello world"));
    //qDebug()<< t;
-   	
- QString t = QString::number(str1.compare(QString("hello world")));
- qDebug()<< t;
+   QString tt=str1.remove(1);
+      int ss=tt.QString::indexOf("!");   
+   QString ttt =tt.leftRef(t-1);
+   QString tts =tt.right(t+1);        	
+   qDebug()<< ttt;
+   qDebug()<< tts;	
+ //QString ts = QString::number(str1.compare(QString("hello world")));
+ //qDebug()<< t;
  }
 // ----------------------------------------------------------------------------
 void pqPlayBackEventsDialog::pqImplementation::setProgressBarsValue(int value)
