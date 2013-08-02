@@ -195,7 +195,9 @@ pqWidgetEventPlayer* widgetPlayers =
    QString ttt =str1.left(tt-1);
    QString tts =str1.right(tt+1);        	
    qDebug()<< tt;
-  // qDebug()<< tts;	
+  qDebug()<< ttt;
+  qDebug()<< tts;
+  	
  //QString ts = QString::number(str1.compare(QString("hello world")));
  //qDebug()<< t;
  }
