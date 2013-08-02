@@ -197,7 +197,8 @@ pqWidgetEventPlayer* widgetPlayers =
    qDebug()<< tt;
   qDebug()<< ttt;
   qDebug()<< tts;
-   QString yy="1,0,0,772,289"
+   QString yy="1,0,0,772,289";
+   
   if (tts.compare(yy))
   {
    qDebug() << "the test pass the value of" << ttt<< ":" << tts <<"is equal to 1,0,0,772,289";
