@@ -189,11 +189,12 @@ pqWidgetEventPlayer* widgetPlayers =
   qDebug()<<"action compare";
  // QCOMPARE(s, QString("hello world"));
    //qDebug()<< t;
-   QString tt=str1.right(2);
-      int ss=tt.QString::indexOf("!");   
+   //QString tt=str1.right(2);
+   QString y = "!";
+   int tt= str1.lastIndexOf(y);     
    QString ttt =tt.left(ss-1);
    QString tts =tt.right(ss+1);        	
-   qDebug()<< str1;
+   qDebug()<< tt;
   // qDebug()<< tts;	
  //QString ts = QString::number(str1.compare(QString("hello world")));
  //qDebug()<< t;
