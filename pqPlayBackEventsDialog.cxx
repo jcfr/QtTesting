@@ -192,11 +192,19 @@ pqWidgetEventPlayer* widgetPlayers =
    //QString tt=str1.right(2);
    QString y = "!";
    int tt= str1.lastIndexOf(y);     
-   QString ttt =str1.left(tt-1);
+   QString ttt =str1.left(tt);
    QString tts =str1.mid(tt+1);        	
    qDebug()<< tt;
   qDebug()<< ttt;
   qDebug()<< tts;
+  if (tts.compare(QString("1,0,0,772,289")))
+  {
+   qDebug() << "the test pass the value of" << ttt<< ":" << tts <<"is equal to 1,0,0,772,289";
+  }
+  else
+  {
+  qDebug() << "the test failed because the value of" << ttt<< ":" << tts <<"is not equal to 1,0,0,772,289";
+  }
   	
  //QString ts = QString::number(str1.compare(QString("hello world")));
  //qDebug()<< t;
