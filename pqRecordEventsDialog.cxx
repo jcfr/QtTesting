@@ -171,7 +171,7 @@ void pqRecordEventsDialog::onEventRecorded(const QString& widget,
     return;
     }
   //this->Implementation->t = argument;
-  if (this->Implementation->checkpointBox->isChecked())
+  if (this->Implementation->Ui.checkpointBox->isChecked())
   {
   QString t =argument;
   QString s =widget;
