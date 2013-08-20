@@ -203,7 +203,7 @@ pqWidgetEventPlayer* widgetPlayers =
    QString yy=this->buffer;
    QString yt = ":";
    int tty= yy.lastIndexOf(yt);
-   QString ttsy =yy.mid(tty+1);
+   QString ttsy =yy.mid(tty+2);
    qDebug()<< ttsy;
    
  /* if (tts.contains(yy),Qt::CaseInsensitive)
