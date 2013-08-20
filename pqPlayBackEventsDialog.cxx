@@ -192,31 +192,29 @@ pqWidgetEventPlayer* widgetPlayers =
  // QCOMPARE(s, QString("hello world"));
    //qDebug()<< t;
    //QString tt=str1.right(2);
-   QString y = "!";
+   QString y = "#";
    int tt= str1.lastIndexOf(y);     
    QString ttt =str1.left(tt);
    QString tts =str1.mid(tt+1); 
           	
    //qDebug()<< tt;
   //qDebug()<< ttt;
-  //qDebug()<< tts;
+  qDebug()<< tts;
    QString yy=this->buffer;
    QString yt = ":";
    int tty= yy.lastIndexOf(yt);
    QString ttsy =yy.mid(tty+2);
    qDebug()<< ttsy;
    
- /* if (tts.contains(yy),Qt::CaseInsensitive)
+  if (ttsy==tts)
   {
-   //qDebug() << "the test pass the value of" << ttt<< ":" << tts <<"is equal to 1,0,0,772,289";
+   qDebug() << "the test pass the value of" << ttt<< ":" << tts <<"is equal to"<< ttsy;
   }
   else
   {
-  //qDebug() << "the test failed because the value of" << ttt<< ":" << tts <<"is not equal to 1,0,0,772,289";
+  qDebug() << "the test failed because the value of" << ttt<< ":" << tts <<"is not equal"<< ttsy;
   }
   	
- //QString ts = QString::number(str1.compare(QString("hello world")));
- //qDebug()<< t;*/
  }
 // ----------------------------------------------------------------------------
 void pqPlayBackEventsDialog::pqImplementation::setProgressBarsValue(int value)

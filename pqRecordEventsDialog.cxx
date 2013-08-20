@@ -171,11 +171,11 @@ void pqRecordEventsDialog::onEventRecorded(const QString& widget,
     return;
     }
   //this->Implementation->t = argument;
-  if (this->Implementation->Ui.blockingCheckBox->isChecked())
+  if (this->Implementation->checkpointBox->isChecked())
   {
   QString t =argument;
   QString s =widget;
-  s.append("!");
+  s.append("#");
   s.append(t);
   this->buffer= s;
   }
