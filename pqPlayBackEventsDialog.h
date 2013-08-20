@@ -77,7 +77,7 @@ private:
   void loadFiles(const QStringList& filenames);
   void addFile(const QString& filename);
   QStringList selectedFileNames() const;
-
+   QString buffer;
   pqPlayBackEventsDialog(const pqPlayBackEventsDialog&);            // Not Implemented
   pqPlayBackEventsDialog& operator=(const pqPlayBackEventsDialog&); // Not Implemented
 

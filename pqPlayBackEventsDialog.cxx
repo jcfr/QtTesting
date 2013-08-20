@@ -80,6 +80,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   QStringList   Filenames;
   QStringList   CurrentEvent;
   QRect         OldRect;
+  QString buffer;
 };
 // ----------------------------------------------------------------------------
 pqPlayBackEventsDialog::pqImplementation::pqImplementation(pqEventPlayer& player,
@@ -94,6 +95,7 @@ pqPlayBackEventsDialog::pqImplementation::pqImplementation(pqEventPlayer& player
   this->CurrentFile = 0;
   this->Filenames = QStringList();
   this->CurrentEvent = QStringList();
+  this->buffer= QString();
 }
 
 // ----------------------------------------------------------------------------
@@ -511,7 +513,7 @@ void pqPlayBackEventsDialog::updateUi()
     this->Implementation->Ui.currentFileLabel->setText(
         QString("No Test is playing ..."));
     }
-
+  
   this->Implementation->Ui.commandLabel->setText(command);
   this->Implementation->Ui.argumentsLabel->setText(argument);
   this->Implementation->Ui.objectLabel->setText(object);
