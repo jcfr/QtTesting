@@ -196,17 +196,17 @@ pqWidgetEventPlayer* widgetPlayers =
    int tt= str1.lastIndexOf(y);     
    QString ttt =str1.left(tt);
    QString tts =str1.mid(tt+1);        	
-   qDebug()<< tt;
-  qDebug()<< ttt;
-  qDebug()<< tts;
+   //qDebug()<< tt;
+  //qDebug()<< ttt;
+  //qDebug()<< tts;
    QString yy="1,0,0,772,289";
   if (tts.contains(yy),Qt::CaseInsensitive)
   {
-   qDebug() << "the test pass the value of" << ttt<< ":" << tts <<"is equal to 1,0,0,772,289";
+   //qDebug() << "the test pass the value of" << ttt<< ":" << tts <<"is equal to 1,0,0,772,289";
   }
   else
   {
-  qDebug() << "the test failed because the value of" << ttt<< ":" << tts <<"is not equal to 1,0,0,772,289";
+  //qDebug() << "the test failed because the value of" << ttt<< ":" << tts <<"is not equal to 1,0,0,772,289";
   }
   	
  //QString ts = QString::number(str1.compare(QString("hello world")));
@@ -513,11 +513,15 @@ void pqPlayBackEventsDialog::updateUi()
     this->Implementation->Ui.currentFileLabel->setText(
         QString("No Test is playing ..."));
     }
-  
+   if(this->Implementation->Ui.checktest->isChecked())
+   {
+   this->buffer=argument;
+   qDebug()<<this->buffer ;
+   }
   this->Implementation->Ui.commandLabel->setText(command);
   this->Implementation->Ui.argumentsLabel->setText(argument);
   this->Implementation->Ui.objectLabel->setText(object);
-
+  
   this->update();
 }
 
