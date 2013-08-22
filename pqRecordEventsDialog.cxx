@@ -171,14 +171,14 @@ void pqRecordEventsDialog::onEventRecorded(const QString& widget,
     return;
     }
   //this->Implementation->t = argument;
-  if (this->Implementation->Ui.checkpointBox->isChecked())
-  {
+  //if (this->Implementation->Ui.checkpointBox->isChecked())
+  //{
   QString t =argument;
   QString s =widget;
   s.append("#");
   s.append(t);
   this->buffer= s;
-  }
+  //}
   this->Implementation->Ui.eventWidgetEdit->setText(widget);
   this->Implementation->Ui.eventCommandEdit->setText(command);
   this->Implementation->Ui.eventArgumentEdit->setText(argument);
@@ -186,11 +186,7 @@ void pqRecordEventsDialog::onEventRecorded(const QString& widget,
   this->Implementation->Ui.nbEvents->display(newValue);
 }
 // ----------------------------------------------------------------------------
- /*void pqRecordEventsDialog::returnargumentedit()
- {
- t= this->Implementation->Ui.eventArgumentEdit->setText(argument);
- return t;
- }*/
+ 
 // ----------------------------------------------------------------------------
 void pqRecordEventsDialog::addComment()
 {

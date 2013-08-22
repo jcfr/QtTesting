@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>612</width>
+    <width>628</width>
     <height>256</height>
    </rect>
   </property>
@@ -292,13 +292,6 @@
       <widget class="QPushButton" name="checkpointButton">
        <property name="text">
         <string>Add checkpoint</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkpointBox">
-       <property name="text">
-        <string>CheckBox</string>
        </property>
       </widget>
      </item>
