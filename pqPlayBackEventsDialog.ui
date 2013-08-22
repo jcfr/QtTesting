@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>468</width>
-    <height>332</height>
+    <width>533</width>
+    <height>331</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -664,13 +664,6 @@
        </property>
        <property name="flat">
         <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checktest">
-       <property name="text">
-        <string>CheckBox</string>
        </property>
       </widget>
      </item>
