@@ -35,7 +35,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "pqEventPlayer.h"
 #include "pqPlayBackEventsDialog.h"
 #include "pqTestUtility.h"
-//#include "pqTest.h"
 #include "ui_pqPlayBackEventsDialog.h"
 
 #include <QString>
@@ -50,7 +49,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QStringListModel>
 #include <QTextStream>
 #include <QTimer>
-//#include <QtTest/QtTest>
 #include <QDebug>
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -201,6 +199,7 @@ pqWidgetEventPlayer* widgetPlayers =
   //qDebug()<< ttt;
   qDebug()<< tts;
    QString yy=this->buffer;
+   qDebug()<< yy;
    QString yt = ":";
    int tty= yy.lastIndexOf(yt);
    QString ttsy =yy.mid(tty+2);
@@ -519,8 +518,11 @@ void pqPlayBackEventsDialog::updateUi()
     }
    //if(this->Implementation->Ui.checktest->isChecked())
    //{
+   if(!(argument.contains("#", Qt::CaseInsensitive)))
+   {
    this->buffer=argument;
    qDebug()<<this->buffer ;
+   }
   // }
   this->Implementation->Ui.commandLabel->setText(command);
   this->Implementation->Ui.argumentsLabel->setText(argument);
