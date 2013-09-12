@@ -24,7 +24,7 @@ bool pqCheckpointEventPlayer::playEvent(QObject* Object,
 {
 
  qDebug() << "Start pqcheckpointplayer action";
-  if (!Command.startsWith("chekpoint"))
+  if (!Command.startsWith("checkpoint"))
     {
     return false;
     }

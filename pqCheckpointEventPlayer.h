@@ -8,7 +8,7 @@
 
 /// This class is a checkpoint class.
 /// Do no action on Object.
-/// Emit checkpoint wrote in the xml, which can be cacth to do checkpoint.
+/// Emit checkpoint wrote in the xml, which can be catch to do test.
 
 class pqCheckpointEventPlayer: public pqWidgetEventPlayer 
 {
