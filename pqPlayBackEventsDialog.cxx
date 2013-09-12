@@ -186,13 +186,18 @@ pqWidgetEventPlayer* widgetPlayers =
 // ----------------------------------------------------------------------------
  void pqPlayBackEventsDialog::compar(const QString& str1) 
  {
-   qDebug()<<"action compare";
+  qDebug()<<"action compare";
+ // QCOMPARE(s, QString("hello world"));
+   //qDebug()<< t;
+   //QString tt=str1.right(2);
    QString y = "#";
    int tt= str1.lastIndexOf(y);     
    QString ttt =str1.left(tt);
    QString tts =str1.mid(tt+1); 
-    
-   qDebug()<< tts;
+          	
+   //qDebug()<< tt;
+  //qDebug()<< ttt;
+  qDebug()<< tts;
    QString yy=this->buffer;
    qDebug()<< yy;
    QString yt = ":";
@@ -511,13 +516,14 @@ void pqPlayBackEventsDialog::updateUi()
     this->Implementation->Ui.currentFileLabel->setText(
         QString("No Test is playing ..."));
     }
-   
+   //if(this->Implementation->Ui.checktest->isChecked())
+   //{
    if(!(argument.contains("#", Qt::CaseInsensitive)))
    {
    this->buffer=argument;
    qDebug()<<this->buffer ;
    }
-  
+  // }
   this->Implementation->Ui.commandLabel->setText(command);
   this->Implementation->Ui.argumentsLabel->setText(argument);
   this->Implementation->Ui.objectLabel->setText(object);
