@@ -123,19 +123,8 @@ pqRecordEventsDialog::pqRecordEventsDialog(pqEventRecorder* recorder,
                    SLOT(updateUi()));
   
    this->buffer= QString();
-  /*QObject::connect(this->Implementation->TestUtility->eventTranslator(),
-                   SIGNAL(recordEvent(QString,QString,QString)),
-                   this, SLOT(addCheckpoint(QString,QString,QString)));*/
-                 
-                                           
-  /* QKeySequence qkey("Ctrl+5");                                                            
-  QShortcut *shortcut= new QShortcut(qkey,this);                
-  QObject::connect(shortcut,
-                   SIGNAL(recordEvent(QString,QString,QString)),
-                   this, SLOT(addCheckpoint(QString,QString,QString))); */
-                                   
-                  
-                   
+ 
+                                                   
 }
 
 // ----------------------------------------------------------------------------
@@ -170,22 +159,18 @@ void pqRecordEventsDialog::onEventRecorded(const QString& widget,
     {
     return;
     }
-  //this->Implementation->t = argument;
-  //if (this->Implementation->Ui.checkpointBox->isChecked())
-  //{
   QString t =argument;
   QString s =widget;
   s.append("#");
   s.append(t);
   this->buffer= s;
-  //}
   this->Implementation->Ui.eventWidgetEdit->setText(widget);
   this->Implementation->Ui.eventCommandEdit->setText(command);
   this->Implementation->Ui.eventArgumentEdit->setText(argument);
   int newValue = this->Implementation->Ui.nbEvents->value() + 1;
   this->Implementation->Ui.nbEvents->display(newValue);
 }
-// ----------------------------------------------------------------------------
+
  
 // ----------------------------------------------------------------------------
 void pqRecordEventsDialog::addComment()
@@ -209,19 +194,9 @@ void pqRecordEventsDialog::addCheckpoint()
     {
     
     qDebug()<<"check action";
-       //int a(1);
-    //if (this->Implementation->Ui.checkpointBox->isChecked())
-     //{
-       
-    
-            // if(a==1) 
-            // {
+      
                this->Implementation->Recorder->translator()->eventCheckpoint()->recordCheckpoint(this->buffer);
-               //this->Implementation->TestUtility->onRecordStopped();
-             //}
-            
-     //}
-      // a=a+1;
+              
     }
   
 

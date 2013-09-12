@@ -215,10 +215,21 @@ void pqEventTranslator::addDefaultEventManagers(pqTestUtility* util)
 {
 qDebug()<<"check the connection action";
   this->Implementation->EventCheckpoint = new pqEventCheckpoint(util);
+  this->Implementation->EventComment = new pqEventComment(util);
   QObject::connect(this->Implementation->EventCheckpoint,
                    SIGNAL(recordCheckpoint(QObject*,QString,QString)),
                    this,
                    SLOT(onRecordEvent(QObject*,QString,QString)));
+                   
+                   
+ QObject::connect(this->Implementation->EventComment,
+                   SIGNAL(recordComment(QObject*,QString,QString)),
+                   this,
+                   SLOT(onRecordEvent(QObject*,QString,QString)));                  
+                   
+                   
+                   
+                   
 }
 
 // ----------------------------------------------------------------------------
@@ -231,15 +242,6 @@ pqEventCheckpoint* pqEventTranslator::eventCheckpoint() const
 {
   return this->Implementation->EventCheckpoint;
 }
-// ----------------------------------------------------------------------------
-/*void pqEventTranslator::addDefaultEventManagerss(pqTestUtility* util)
-{
-  this->Implementation->EventCheckpoint = new pqEventCheckpoint(util);
-  QObject::connect(this->Implementation->EventCheckpoint,
-                   SIGNAL(recordCheckpoint(QObject*,QString,QString)),
-                   this,
-                   SLOT(onRecordEvents(QObject*,QString,QString)));
-}*/
 
 
 // ----------------------------------------------------------------------------
@@ -308,7 +310,7 @@ void pqEventTranslator::onRecordEvent(QObject* Object,
   QString name;
   // When sender is pqEventObject, the Object name can be NULL.
   qDebug()<<"check the connection action new";
-  if (!qobject_cast<pqEventCheckpoint*>(this->sender()) || Object)
+  if (!qobject_cast<pqEventCheckpoint*>(this->sender()) || Object ||!qobject_cast<pqEventComment*>(this->sender()) )
     {
     name = pqObjectNaming::GetName(*Object);
     if(name.isEmpty())
@@ -318,24 +320,7 @@ void pqEventTranslator::onRecordEvent(QObject* Object,
   emit recordEvent(name, Command, Arguments);
 }
 // ----------------------------------------------------------------------------
-/*void pqEventTranslator::onRecordEvents(QObject* Object,
-                                      const QString& Command,
-                                      const QString& Arguments)
-{
-  if(this->Implementation->IgnoredObjects.contains(Object))
-    return;
 
-  QString name;
-  // When sender is pqEventObject, the Object name can be NULL.
-  if (!qobject_cast<pqEventCheckpoint*>(this->sender()) || Object)
-    {
-    name = pqObjectNaming::GetName(*Object);
-    if(name.isEmpty())
-      return;
-    }
-
-  emit recordEvent(name, Command, Arguments);
-}*/
 
 
 
