@@ -161,7 +161,7 @@ void pqEventPlayer::playEvent(const QString& Object,
     return;
     }
 
-  if(!object && !Command.startsWith("checkpoint") &&  )
+  if(!object && !Command.startsWith("checkpoint"))
     {
     qCritical() << pqObjectNaming::lastErrorMessage();
     emit this->errorMessage(pqObjectNaming::lastErrorMessage());
