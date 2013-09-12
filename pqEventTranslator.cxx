@@ -74,9 +74,10 @@ struct pqEventTranslator::pqImplementation
     delete this->EventCheckpoint;
     }
     
-   
-    
-    
+   if(this->EventComment)
+    {
+    delete this->EventComment;
+    }
   }
   pqEventCheckpoint* EventCheckpoint;
   pqEventComment* EventComment;
@@ -310,13 +311,20 @@ void pqEventTranslator::onRecordEvent(QObject* Object,
   QString name;
   // When sender is pqEventObject, the Object name can be NULL.
   qDebug()<<"check the connection action new";
-  if (!qobject_cast<pqEventCheckpoint*>(this->sender()) || Object ||!qobject_cast<pqEventComment*>(this->sender()) )
+  if (!qobject_cast<pqEventCheckpoint*>(this->sender()) || Object)
     {
     name = pqObjectNaming::GetName(*Object);
     if(name.isEmpty())
       return;
     }
+   if (!qobject_cast<pqEventComment*>(this->sender()) || Object)
+    {
+    name = pqObjectNaming::GetName(*Object);
+    if(name.isEmpty())
+      return;
+    } 
 
+    
   emit recordEvent(name, Command, Arguments);
 }
 // ----------------------------------------------------------------------------
