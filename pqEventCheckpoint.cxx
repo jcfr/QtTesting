@@ -19,7 +19,7 @@ pqEventCheckpoint::~pqEventCheckpoint()
 // ----------------------------------------------------------------------------
 void pqEventCheckpoint::recordCheckpoint(const QString& arguments)
   {
-   this->recordCheckpoint(QString("chekpoint"), arguments);
+   this->recordCheckpoint(QString("checkpoint"), arguments);
   }
 
 void pqEventCheckpoint::recordCheckpoint(const QString& command,
@@ -28,7 +28,7 @@ void pqEventCheckpoint::recordCheckpoint(const QString& command,
 {
   if (arguments.isEmpty())
     {
-    qCritical() << "The checkppoint is empty ! No checkpoint has been added !";
+    qCritical() << "The checkpoint is empty ! No checkpoint has been added !";
     return;
     }
 
