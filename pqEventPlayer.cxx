@@ -237,4 +237,5 @@ void pqEventPlayer::playEvent(const QString& Object,
   emit this->eventPlayed(Object, Command, Arguments);
   Error = false;
 }
+}
 
