@@ -186,18 +186,13 @@ pqWidgetEventPlayer* widgetPlayers =
 // ----------------------------------------------------------------------------
  void pqPlayBackEventsDialog::compar(const QString& str1) 
  {
-  qDebug()<<"action compare";
- // QCOMPARE(s, QString("hello world"));
-   //qDebug()<< t;
-   //QString tt=str1.right(2);
+   qDebug()<<"action compare";
    QString y = "#";
    int tt= str1.lastIndexOf(y);     
    QString ttt =str1.left(tt);
    QString tts =str1.mid(tt+1); 
-          	
-   //qDebug()<< tt;
-  //qDebug()<< ttt;
-  qDebug()<< tts;
+    
+   qDebug()<< tts;
    QString yy=this->buffer;
    qDebug()<< yy;
    QString yt = ":";
