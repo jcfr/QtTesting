@@ -161,7 +161,7 @@ void pqEventPlayer::playEvent(const QString& Object,
     return;
     }
 
-  if(!object && !Command.startsWith("checkpoint") && !Command.startsWith("comment")  )
+  if(!object && !Command.startsWith("chekpoint"))
     {
     qCritical() << pqObjectNaming::lastErrorMessage();
     emit this->errorMessage(pqObjectNaming::lastErrorMessage());
@@ -172,21 +172,7 @@ void pqEventPlayer::playEvent(const QString& Object,
   // Loop through players until the event gets handled ...
   bool accepted = false;
   bool error = false;
-  
-  if (Command.startsWith("comment"))
-    {
-    pqWidgetEventPlayer* widgetPlayer =
-        this->getWidgetEventPlayer(QString("pqCommentEventPlayer"));
-    pqCommentEventPlayer* commentplayer =
-        qobject_cast<pqCommentEventPlayer*>(widgetPlayer);
-    if (commentplayer)
-      {
-      accepted = commentplayer->playEvent(object, Command, Arguments, error);
-      }
-  
-  
-  
-  if (Command.startsWith("checkpoint"))
+  if (Command.startsWith("chekpoint"))
     {
     pqWidgetEventPlayer* widgetPlayer =
         this->getWidgetEventPlayer(QString("pqCheckpointEventPlayer"));
@@ -236,6 +222,5 @@ void pqEventPlayer::playEvent(const QString& Object,
   // The event was handled successfully ...
   emit this->eventPlayed(Object, Command, Arguments);
   Error = false;
-}
 }
 
