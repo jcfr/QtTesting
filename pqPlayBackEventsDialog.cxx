@@ -511,14 +511,13 @@ void pqPlayBackEventsDialog::updateUi()
     this->Implementation->Ui.currentFileLabel->setText(
         QString("No Test is playing ..."));
     }
-   //if(this->Implementation->Ui.checktest->isChecked())
-   //{
+   
    if(!(argument.contains("#", Qt::CaseInsensitive)))
    {
    this->buffer=argument;
    qDebug()<<this->buffer ;
    }
-  // }
+  
   this->Implementation->Ui.commandLabel->setText(command);
   this->Implementation->Ui.argumentsLabel->setText(argument);
   this->Implementation->Ui.objectLabel->setText(object);
